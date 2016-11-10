@@ -32,6 +32,6 @@ void MainWindow::startSearch()
 
 void MainWindow::textDownloaded()
 {
-    QString data (QTextCodec::codecForMib(106)->toUnicode(m_urlDownloader->downloadedData()));
+    QString data (m_urlDownloader->downloadedData().toStdString().c_str());
     qDebug("job is done");
 }
